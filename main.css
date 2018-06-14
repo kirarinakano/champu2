@@ -1,0 +1,220 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.top {
+  /*text-align: left;*/
+  background-color: #6ba3ff;
+  height: 60px;
+}
+
+.logo {
+	/*font-weight: 1000;*/
+	color: #2055aa;
+	font-size: 25px;
+	padding-left: 5px;
+	padding-top: 1px;
+}
+
+.middle {
+	float: left;
+
+
+}
+
+.img {
+	padding-top: 5px;
+}
+
+.right {
+    float: right;
+}
+
+.company {
+	float: left;
+	padding-top: 10px;
+}
+
+.profile {
+	border-radius: 60px;
+}
+
+/* twitter画像をホバーした */
+img.profile:hover{
+ 
+	/* 透明度を上げることで、画像の色を薄く見せる。*/
+	opacity:0.5;
+ 
+	/* リンクをホバーしたときのカーソルにする。*/
+	cursor: pointer;
+}
+ 
+/* twitter画像をクリックした瞬間 */
+img.profile:active{
+ 
+	/* 要素を若干下に下げることで、押した感じを出す。*/
+ 
+	/* 今いる位置から相対的に3px下に配置する。*/
+	position: relative;
+	top: 3px;
+ 
+}
+
+.additem {
+	color: white;
+	background-color: #6ba3ff;
+	padding:10px 20px;
+	font-size: 24px;
+	margin: 20px 0 10px 20px;
+}
+button {
+	border-radius: 5px;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+table, th, td {
+  border: 3px solid #6ba3ff;
+  border-collapse: collapse;
+}
+
+.scroll thead,.scroll tbody {
+  display: block;
+}
+
+.scroll tbody {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 250px;
+}
+
+th {
+	color: #6ba3ff;
+  padding: 5px 10px;
+}
+
+td{
+	color :#F5A623;
+	font-weight: bold;
+}
+
+th, td {
+	width: 40px;
+	height: 60px;
+}
+
+.table-container {
+	overflow-y: auto;
+  overflow-x: hidden;
+	height: 200px;
+}
+
+.scroll {
+  width: 738px;
+}
+
+.scroll tr {
+  display: table;
+  width: 100%;
+}
+
+.scroll thead th {
+    width: 12.5%;
+}
+
+.scroll tbody tr td {
+  width: 12.5%;
+  box-sizing: border-box;
+}
+
+.table table {
+	width: 100%;
+}
+
+.edit {
+	color: white;
+	background-color: #ACE075;
+	width: 50px;
+	height: 25px;
+}
+.delete {
+	color : white;
+	background-color: #F5A623;
+	border-radius: 5px;
+	width: 50px;
+	margin-left: 20px;
+	height: 25px;
+}
+.wrapbutton {
+	display: flex;
+}
+.update{
+	color: white;
+	background-color: #6ba3ff;
+	width: 50px;
+	height: 25px;
+}
+.calculater{
+	font-size: 24px;
+}
+.subtittle p{
+	color: #F5A623;
+	padding-left: 50px;
+	display: inline-block;
+	padding-top: 30px;
+}
+.calculater span{
+	color: #ACE075;
+}
+.calculate{
+	border-radius: 5px;
+	color: white;
+	font-size: 17px;
+	background-color: #6ba3ff;
+	width: 100px;
+	height: 50px;
+	margin-left: 30px;
+}
+.bottom p{
+	color: #6ba3ff;
+}
+.average {
+	width: 50px;
+	height: 40px;
+	font-size: 20px;
+}
+.tripday {
+	width: 50px;
+	height: 40px;
+	font-size: 20px;
+}
+.bottom {
+	width: 1100px;
+	float: left;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+p {
+	display: inline;
+}
+
+.trip {
+	display: inline;
+	float: left;
+	border: 0px solid black;
+	margin-left: 15px;
+}
+
+.ave {
+	float: left;
+	display: inline;
+	border: 0px solid black;
+}
+.error {
+	color: red;
+	text-align: center;
+}

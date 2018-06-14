@@ -1,0 +1,109 @@
+import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #6ba3ff;
+}
+
+input {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+	background-color: #6ba3ff;
+	height: 60px;
+}
+
+.logo {
+	margin-left: 10px;
+	float: left;
+}
+
+.logo p{
+	font-weight: 1000;
+	color: #2055aa;
+	font-size: 25px;
+	padding-left: 5px;
+}
+
+.tittle {
+	text-align: center;
+	font-size: 36px;
+}
+/*p {
+	font-size: 20px;
+}*/
+.subtittle p {
+	display: inline-block;
+	padding: 3px 60px;
+	font-size: 20px;
+}
+
+.itemdata p{
+	display: inline-block;
+	padding: 30px 60px;
+	font-size: 20px;
+}
+
+.itemname{
+	margin-left: 35px;
+	width: 180px;
+	border-radius: 5px;
+	height: 30px;
+	font-size: 20px;
+}
+
+.amount {
+	margin-left: 80px;
+	width: 70px;
+	border-radius: 5px;
+	height: 30px;
+	font-size: 20px;
+}
+
+.date {
+	margin-left: 60px;
+    width: 140px;
+    border-radius: 5px;
+    font-size: 15px;
+    height: 30px;
+}
+
+.update {
+	width: 120px;
+	height: 70px;
+	font-size: 20px;
+	background-color: #6ba3ff;
+	color: white;
+	border-radius: 5px;
+	margin-top: 30px
+}
+
+.wrap_update{
+	text-align: center;
+}
+a {
+	color: #6ba3ff;
+}
+
+.wrap_link {
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+p {
+	color: #6ba3ff;
+}
+
+.frame {
+	width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span {
+	color: #6ba3ff;
+}
+6月14日 16:54
+ Enterで送信 改行

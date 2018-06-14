@@ -1,0 +1,57 @@
+.top {
+  /*text-align: left;*/
+  background-color: #6ba3ff;
+  height: 60px;
+}
+
+.logo {
+	/*font-weight: 1000;*/
+	color: #2055aa;
+	font-size: 25px;
+	padding-left: 5px;
+	padding-top: 1px;
+}
+
+.middle {
+	float: left;
+
+
+}
+
+.img {
+	padding-top: 5px;
+}
+
+.right {
+    float: right;
+}
+
+.company {
+	float: left;
+	padding-top: 10px;
+}
+
+.profile {
+	border-radius: 60px;
+}
+
+/* twitter画像をホバーした */
+img.profile:hover{
+ 
+	/* 透明度を上げることで、画像の色を薄く見せる。*/
+	opacity:0.5;
+ 
+	/* リンクをホバーしたときのカーソルにする。*/
+	cursor: pointer;
+}
+ 
+/* twitter画像をクリックした瞬間 */
+img.profile:active{
+ 
+	/* 要素を若干下に下げることで、押した感じを出す。*/
+ 
+	/* 今いる位置から相対的に3px下に配置する。*/
+	position: relative;
+	top: 3px;
+ 
+}

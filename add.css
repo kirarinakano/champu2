@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #6ba3ff
+}
+input {
+  font-family: 'Open Sans', sans-serif;
+}
+.top {
+  /*text-align: left;*/
+  background-color: #6ba3ff;
+  height: 60px;
+}
+
+.logo {
+	/*font-weight: 1000;*/
+	color: #2055aa;
+	font-size: 25px;
+	padding-left: 5px;
+	padding-top: 1px;
+}
+
+.middle {
+	float: left;
+
+
+}
+
+.img {
+	padding-top: 5px;
+}
+
+.right {
+    float: right;
+}
+
+.company {
+	float: left;
+	padding-top: 10px;
+}
+
+.profile {
+	border-radius: 60px;
+}
+
+/* twitter画像をホバーした */
+img.profile:hover{
+ 
+	/* 透明度を上げることで、画像の色を薄く見せる。*/
+	opacity:0.5;
+ 
+	/* リンクをホバーしたときのカーソルにする。*/
+	cursor: pointer;
+}
+ 
+/* twitter画像をクリックした瞬間 */
+img.profile:active{
+ 
+	/* 要素を若干下に下げることで、押した感じを出す。*/
+ 
+	/* 今いる位置から相対的に3px下に配置する。*/
+	position: relative;
+	top: 3px;
+ 
+}
+.tittle {
+	text-align: center;
+	font-size: 36px;
+}
+/*p {
+	font-size: 20px;
+}*/
+.subtittle p {
+	display: inline-block;
+	padding: 30px 60px;
+	font-size: 20px;
+}
+.itemdata p{
+	display: inline-block;
+	padding: 30px 60px;
+	font-size: 20px;
+}
+.itemname{
+	/*margin-left: 70px;*/
+}
+.amount {
+	/*margin-left: 70px;*/
+}
+.date {
+	/*margin-left: 60px; */
+}
+.register {
+	width: 120px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #6ba3ff;
+	color: white;
+	border-radius: 5px;
+	margin-top: 30px
+}
+.wrap_register{
+	text-align: center;
+}
+a {
+	color: #6ba3ff;
+	font-weight: bold;
+}
+.wrap_link {
+	text-align: center;
+}
+.wrap {
+	text-align:center;
+	margin-left:auto;margin-right:auto;
+	text-align:left;
+}

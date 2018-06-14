@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header {
+	background-color: #6ba3ff;
+	height: 60px;
+}
+.logo {
+	margin-left: 10px;
+	float: left;
+}
+.logo p{
+	font-weight: 1000;
+	color: #2055aa;
+	font-size: 25px;
+	padding-left: 5px;
+}
+
+.additem {
+	color: white;
+	background-color: #6ba3ff;
+	margin-top: 30px;
+	margin- left: 20px;
+	padding:10px 20px;
+	font-size: 24px;
+}
+button {
+	border-radius: 5px;
+}
+.edit {
+	color: white;
+	background-color: #ACE075;
+}
+.delete {
+	color : white;
+	background-color: #F5A623;
+	border-radius: 5px;
+}
+.edit.delete{
+	display: inline-block;
+
+}
+.update{
+	color: white;
+	background-color: #6ba3ff;
+}
+.calculater{
+	font-size: 24px;
+}
+.subtittle p{
+	color: #F5A623;
+	padding-left: 50px;
+	display: inline-block;
+}
+.calculater span{
+	color: #ACE075;
+}
+.calculate{
+	border-radius: 5px;
+	color: white;
+	background-color: #6ba3ff;
+}
+.bottom p{
+	display: inline-block;
+	color: #6ba3ff;
+}
+.average {
+	width: 60px;
+	height: 50px;
+	font-size: 20px;
+}
+table, th, td {
+  border: 3px solid #6ba3ff;
+  border-collapse: collapse;
+/*  margin-top: 20px;
+  margin-left: 10px;*/
+}
+th {
+	color: #6ba3ff;
+}
+td{
+	color :#F5A623;
+	font-weight: bold;
+}
+th, td {
+	padding: 5px 10px;
+}
+tbody td:last-child, thead th:last-child {
+    border-right: none;
+}
+
+.table {
+	width: 100%;
+	max-width: 800px;
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.table table {
+	width: 100%;
+}
+/*table.scroll {*/
+    /* width: 100%; */ /* Optional */
+    /* border-collapse: collapse; */
+    /*border-spacing: 0;
+}
+
+table.scroll tbody,
+table.scroll thead { display: block; }
+
+thead tr th { 
+    height: 30px;
+    line-height: 30px;*/
+    /* text-align: left; */
+/*}
+
+table.scroll tbody {
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody {
+ border-top: 2px solid black; 
+}
+
+*/
+/*tbody td:last-child, thead th:last-child {
+    border-right: none;
+}*/
