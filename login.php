@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include 'connect.php';
 
 $errormessage = "";
 
