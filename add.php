@@ -1,6 +1,6 @@
 <?php
-session_start();
 include 'connect.php';
+include 'header.php';
 $Emailaddress = $_SESSION["Emailaddress"];
 // $userID = 3;
 $sql = "SELECT * FROM userinfo LEFT JOIN itemdata ON userinfo.userID = itemdata.userID";
@@ -14,12 +14,6 @@ if ($result3->num_rows > 0) {
           $user = $row["userID"];
           $userID = $user;     
  }}
-// if($conn->query($sql) ===TRUE){
-//   echo "";
-// }else{
-//   echo "Error:" .$sql."<br>".$conn->error;
-// }
-// var_dump(isset($_POST["itemdata"]));
 $errorMessage = "";
 if (isset($_POST["itemdata"])) {
   $item = $_POST["Itemname"];
@@ -62,23 +56,16 @@ if (isset($_POST["itemdata"])) {
         }
       }
   }
-
-
 $target_dir = "pics/";
 $Emailaddress = $_SESSION["Emailaddress"];
 $userID = $_SESSION["userID"];
-
 $sql2 = "SELECT * FROM userinfo WHERE userID = $userID";
 $result = $conn->query($sql2);
-
 $row = $result->fetch_assoc();
-
 $Picture = $row["Picture"];
-
 if ($Picture == NULL) {
   $Picture = "unknow.png";
 }
-
 // header("Location: main.php");
 // exit();
 ?>
@@ -90,51 +77,54 @@ if ($Picture == NULL) {
   <title>additem</title>
 </head>
 <body>
-   <div class="top" width="100px">
-     <div class="middle">
-       <img src="image/champulogo.png" width="80px" height="50px" align="left" class="img">
-     </div>
-     <div class="company">
-      <h2 class="logo" style="margin-top: 0px;"> CHAMPU</h2> 
-     </div>
-     <div class="right">
-         <a href='mypage.php' ><img src="pics/<?php echo $Picture; ?>" height="60px" width="60px" class="profile" ontouchstart="" ></a>
-     </div>
-   </div>
-  <div class="tittle">
+  <div class="title">
     <p>Add item</p>
   </div>
   <form action="add.php" method="POST" >
-    <div class="wrap">
-    <div class="subtittle">
-       <p>Item name</p>
-       <p>Amout</p>
-    </div>
-    <div class="itemdata">
-      <input type="text" class="itemname" name="Itemname"maxlength="20" minlength="1" required placeholder="1-20" autocomplete="off">
-      <input type="number" class="amount"name="amount" min="1" required autocomplete="off">
-      <span>ml</span>
-    </div>
-    <div class="subtittle">
-      <p>Use start date</p>
-    </div>
-    <input type="date" value="" name="startday" class="date" required>
-        <?php 
-        echo $errorMessage;
-        ?>
-    </div>
-    <div class="wrap_register">
-      <button type="submit" name="itemdata" class="register">Register</button><br>
-    </div>
-    <?php  
-     $sql5 = "SELECT * FROM itemdata";
-    $result2 = $conn->query($sql5);
-        if ($result2->num_rows == 0) {
-        } else {
-          echo "<div class='wrap_link'><a style= 'color: #6ba3ff;' href='main.php'  class='link' >Back to main page</a></div>";
-        }
-        
-    ?>
+    <div class="frame">  
+      <div class="wrap">
+      <div class="subtitle">
+        <SPAN style="margin-right:230px">
+          <p>Item Name</p>
+          <p>Amout</p>
+        </SPAN>  
+      </div>
+      <div class="itemdata">
+        <SPAN style="margin-right:230px">
+          <input type="text" class="itemname" name="Itemname" maxlength="20" minlength="1" required autocomplete="off">
+          &ensp;&ensp;&emsp;&emsp;&emsp;
+          <input type="number" class="amount" name="amount" min="1" required autocomplete="off"> 
+          <span>ml</span>
+        </SPAN>
+      </div>
+      <div class="subtitle">
+        <SPAN style="margin-right:500px">
+          <p>Use Start Date</p>
+        </SPAN>
+      </div>
+        <SPAN style="margin-right:400px">
+          <input type="date" value="" name="startday" class="date" required>
+        </SPAN> 
+          <?php 
+          echo $errorMessage;
+          ?>
+      </div>
+      <br>
+      <div class="wrap_register">
+        <button type="submit" name="itemdata" class="register">Register</button><br>
+      </div>
+      <br>
+      <?php  
+      $sql5 = "SELECT * FROM itemdata";
+      $result2 = $conn->query($sql5);
+          
+      if ($result2->num_rows == 0) {
+      } else {
+      echo "<div class='wrap_link'><a style= 'color: #6ba3ff;' href='main.php'  class='link' >Back to main</a></div>";
+      }
+          
+      ?>
+    </div>  
   </form>
 </body>
 </html>

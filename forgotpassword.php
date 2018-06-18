@@ -1,9 +1,8 @@
 <?php
 session_start();
 include 'connect.php';
-
+include 'headern.php';
 $errormessage="";
-
 $sql="SELECT * from userinfo";
 $result = $conn->query($sql);
   if ($result->num_rows > 0){
@@ -23,7 +22,6 @@ if(isset($_POST['submit'])) {
       $errormessage = "＊Your birthday or/and email address is wrong.";
     }
 }
-
 ?>
 
 <!DOCTYPE html1>
@@ -32,34 +30,44 @@ if(isset($_POST['submit'])) {
   <link rel="stylesheet" href="forgotpassword.css">
 </head>
 <body>
-  <div class="header">
-    <div class="logo">
-      <img src="image/champulogo.png" width="80px" height="50px" alt="champulogo">
-      <p>CHAMPU</p>
-    
-     </div>
-  </div>
-  <div class="tittle">
-    <p>Forgot password</p>
-  </div>
-<div class="subtittle">
-  <p>BirthDay</p>
-  <form action="forgotpassword.php" method="post">
-  <input type="date" name="Birthday" required>
-    <div class="subtittle">
-    <p>Email address</p>
+   <div class="title">
+        <p>Forgot password</p>
+    </div>
+      <form action="forgotpassword.php" method="post">
+        <div class="frame">
+          <div class="table">
+            <table>
+              <tr>
+                <td class="sub">Birth day</td> 
+                <td align="center"><input class="box" type="tel" maxlength='8' minlength="8" name="birthday" autocomplete="off" required pattern="^[0-9]+$"></td>
+              </tr> 
+              <tr>
+                <td></td>
+                <td class="limitation">✳︎input only Number (e.g. 19990402)<br></td>
+              </tr>
+              <tr>
+                <td><br></td>
+              </tr>
+              <tr>
+                <td><br></td>
+              </tr>  
+              <tr>
+                <td class="sub">Email address</td>  
+                <td align="center"><input class="box" type="email" required></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="limitation">*Input only half-digit alphanumeric,include @ and .</td>
+              </tr>
+            </table>
+          <br>  
+          <p><?php echo $errormessage?></p>
+          <input class= "button" type="submit" name="submit"value="Submit">
+      </form>
         </div>
-         <input type="email" name="Emailaddress" required>
-    <div class="caution">
-      <p>*Input only half-digit alphanumeric,include @ and .</p>
-   </div>
-   <p><?php echo $errormessage?>
-     
-    <input class= "button" type="submit" name="submit"value="Submit">
-  </form>
+    <br>    
   <div class="link">
-    <a href="login.php">Go to login</a>s
+    <a href="login.php" class="link">Go to login</a>
   </div>
 </body>
 </html>
-

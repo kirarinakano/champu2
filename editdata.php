@@ -1,21 +1,17 @@
 <?php
 include 'connect.php';
 include 'header.php';
-
 $userID = $_SESSION["userID"];
 $itemID = $_SESSION["itemID"];
 $dataID = $_SESSION["dataID"];
-
 $errorMessage = "";
 $errorMessages = "";
-
 $sql = "SELECT * FROM itemdata WHERE userID='$userID'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     $itemname = $row['Itemname'];
     $amount = $row['Amount'];
-
     $sql2 = "SELECT * FROM itemadddata WHERE Registerday = (SELECT MAX(Registerday) FRoM itemadddata WHERE itemID='$itemID')";
     $result1 = $conn->query($sql2);
       if ($result1->num_rows > 0) {
@@ -26,15 +22,12 @@ if ($result->num_rows > 0) {
       }
   }
 }
-
 if (isset($_POST["update"])) {
   $Itemname = $_POST['itemname'];
   $Amount = $_POST['amount'];
   $Startday = $_POST['startday'];
   $Endday = $_POST['endday'];
-
   $today = date("Y/m/d");
-
    if (strtotime($Endday) < strtotime($Startday)) {
       $errorMessages = "Please select end day after start day you selected";
      } elseif (strtotime($today) < strtotime($Endday)) {
@@ -50,7 +43,6 @@ if (isset($_POST["update"])) {
       } else {
          echo "1 Error during updating record: " . $conn->error . "<br>";
         }
-
         $sql1 = "UPDATE itemadddata SET Startday='$Startday',Endday='$Endday' WHERE dataID='$dataID'";
         if ($conn->query($sql1) === TRUE) {
        header('Location: main.php');
@@ -59,7 +51,6 @@ if (isset($_POST["update"])) {
         }
      }
 }
-
 ?>
 <!DOCTYPE html>
 <html>
