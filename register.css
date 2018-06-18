@@ -8,8 +8,13 @@ input {
   font-family: 'Open Sans', sans-serif;
 }
 
-div {
-  text-align: center;
+img {
+  padding-top: 5px;
+}
+
+.company {
+  padding-top: 13px;
+  color: #2055aa;
 }
 
 .top {
@@ -17,7 +22,11 @@ div {
   height: 60px;
 }
 
- div {
+.title {
+  text-align: center;
+}
+
+.frame {
   text-align: center;
   width: 100%;
 }
@@ -70,9 +79,6 @@ a {
   font-size: 24px;
   color: #6ba3ff; 
 }
-
-
-
 
 .box {
   font-size: 20px;
