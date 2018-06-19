@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-	font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 input {
@@ -12,38 +12,69 @@ div {
   text-align: center;
 }
 
+.top {
+  /*text-align: left;*/
+  background-color: #6ba3ff;
+  height: 60px;
+}
+
+.logo {
+  /*font-weight: 1000;*/
+  color: #2055aa;
+  font-size: 25px;
+  padding-left: 5px;
+  padding-top: 1px;
+}
+
+.middle {
+  float: left;
+}
+
+.img {
+  padding-top: 5px;
+}
+
+.right {
+    float: right;
+}
+
+.company {
+  float: left;
+  padding-top: 10px;
+}
+
 .title {
   text-align: center;
   font-size: 36px;
-  font-family: 'Open Sans', sans-serif;		
+  font-family: 'Open Sans', sans-serif;   
 }
 
 .form {
   font-size: 20px;
   border-radius: 5px;
-  height: 40px;	
+  height: 40px; 
   width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .top {
-	background-color: #6ba3ff;
-	height: 60px;
+  background-color: #6ba3ff;
+  height: 60px;
 }
 
 p {
-	color: #6ba3ff;
+  color: #6ba3ff;
 }
 
 .login {
-	font-size: 36px;
-	font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .link {
-	color: #6ba3ff;
-	font-size: 24px;
+  color: #6ba3ff;
+  font-size: 24px;
 }
 
 .username {
@@ -61,20 +92,20 @@ p {
 .box {
   font-size: 20px;
   border-radius: 5px;
-  height: 40px;	
+  height: 40px; 
 }
 
 
 .logi {
-	width: 120px;
-	height: 70px;
-	font-size: 20px;
-	padding: ;
-	background-color: #6ba3ff;
-	color: white;
-	border-radius: 5px;
+  width: 120px;
+  height: 70px;
+  font-size: 20px;
+  padding: ;
+  background-color: #6ba3ff;
+  color: white;
+  border-radius: 5px;
 }
 
 .biggest {
-	text-align: center
+  text-align: center
 }
