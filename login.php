@@ -22,7 +22,7 @@ if (isset($_POST["submit"])){
   $userID = $row["userID"];
 
 
-    $sql1 = "SELECT * FROM itemadddata WHERE userID='$userID'";
+    $sql1 = "SELECT * FROM itemdata WHERE userID='$userID'";
     $result = $conn->query($sql1);
 
         if ($result->num_rows == 0) {
