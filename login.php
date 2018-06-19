@@ -1,6 +1,7 @@
 <?php
+session_start();
 
-include 'connection.php';
+include 'connect.php';
 
 $errormessage = "";
 
@@ -10,7 +11,7 @@ if (isset($_POST["submit"])){
   // $userID = $_POST['userID'];
 
   $sql = "SELECT * FROM userinfo WHERE Emailaddress = '$Emailaddress' AND Password = '$Password'";
-  $result = $conn_db->query($sql);
+  $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -18,10 +19,11 @@ if (isset($_POST["submit"])){
   $_SESSION["userID"] = $row["userID"];
   $_SESSION["password"] = $Password;
   $_SESSION["Emailaddress"] = $Emailaddress;
+  $userID = $row["userID"];
 
 
-    $sql1 = "SELECT * FROM itemadddata";
-    $result = $conn_db->query($sql1);
+    $sql1 = "SELECT * FROM itemadddata WHERE userID='$userID'";
+    $result = $conn->query($sql1);
 
         if ($result->num_rows == 0) {
           header('Location: add.php');
@@ -49,7 +51,14 @@ if (isset($_POST["submit"])){
 
 </head>
 <body>
-    <div class="top"></div>
+   <div class="top" width="100px">
+     <div class="middle">
+       <img src="image/champulogo.png" width="80px" height="50px" align="left" class="img">
+     </div>
+     <div class="company">
+      <h2 class="logo" style="margin-top: 0px;"> CHAMPU</h2> 
+     </div>
+   </div>
 
       <p class="title">Log in</p><br>
         <div class="biggest">
@@ -78,14 +87,9 @@ if (isset($_POST["submit"])){
             </tr>
         </table>
       </div>
-
-
-        <br><br>
-        <a href='<?php echo $url ?>'><img src='twitter-login-blue.png' style='margin-left:4%; margin-top: 4%'></a>
     
 
-
-     <br><br>
+     <br><br><br><br><br>
 
         <p><input class="logi"  type="submit" value="log in" name="submit"></p>
       <br>

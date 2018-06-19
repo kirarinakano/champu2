@@ -1,19 +1,19 @@
 <?php
 include 'connect.php';
 include 'header.php';
-$Emailaddress = $_SESSION["Emailaddress"];
+$userID = $_SESSION["userID"];
 // $userID = 3;
 $sql = "SELECT * FROM userinfo LEFT JOIN itemdata ON userinfo.userID = itemdata.userID";
 $result = $conn->query($sql);
 $sql2 = "SELECT * FROM itemdata LEFT JOIN itemadddata ON itemdata.itemID = itemadddata.itemID";
 $result2 = $conn->query($sql2);
-$sql6 = "SELECT userID FROM userinfo WHERE Emailaddress='$Emailaddress'";
-$result3 = $conn->query($sql6);
-if ($result3->num_rows > 0) {
-        while ($row = $result3->fetch_assoc()) {
-          $user = $row["userID"];
-          $userID = $user;     
- }}
+// $sql6 = "SELECT userID FROM userinfo WHERE Emailaddress='$Emailaddress'";
+// $result3 = $conn->query($sql6);
+// if ($result3->num_rows > 0) {
+//         while ($row = $result3->fetch_assoc()) {
+//           $user = $row["userID"];
+//           $userID = $user;     
+//  }}
 $errorMessage = "";
 if (isset($_POST["itemdata"])) {
   $item = $_POST["Itemname"];
@@ -47,6 +47,21 @@ if (isset($_POST["itemdata"])) {
         echo "Error:" .$sql3."<br>".$conn->error;
          }
       } else if (strtotime($today) > strtotime($startday)) {
+       $sql1 ="INSERT INTO itemdata (Itemname, Amount,userID)
+       VALUES ('$item', '$amount', '$userID') ";
+       if ($conn->query($sql1) === TRUE) {
+       echo "";
+       } else {
+       echo "Error:" .$sql1."<br>".$conn->error;
+         }        
+        $sql4 = "SELECT itemID FROM itemdata";
+        $result1 = $conn->query($sql4);
+        if ($result1->num_rows > 0) {
+          while ($row = $result1->fetch_assoc()) {
+          $itemID = $row["itemID"];
+          }} else {
+        echo "0 results";
+        }
         $sql3 = "INSERT INTO itemadddata (Startday,itemID) VALUES('$startday','$itemID')";
         if ($conn->query($sql3) === TRUE) {
         echo "";
