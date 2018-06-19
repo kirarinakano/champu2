@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'connect.php';
-$Emailaddress = $_SESSION["Emailaddress"];
+$userID = $_SESSION["userID"];
 
 $sql = "SELECT * FROM itemdata LEFT JOIN itemadddata ON itemdata.itemID = itemadddata.itemID";
 $result = $conn->query($sql);
@@ -22,14 +22,14 @@ $target_day = "";
     } elseif (strtotime($today) === strtotime($target_day)) {
         $sql = "UPDATE itemadddata SET Endday='$target_day' WHERE  itemID='$itemID'";
         if ($conn->query($sql) === TRUE) {
-          header("Location:main.php");
+          header("Refresh:0; Location:main.php");
         } else {
           echo "1 Error during updating record: " . $conn->error . "<br>";  
           }
     } elseif (strtotime($today) > strtotime($target_day)) {
       $sql = "UPDATE itemadddata SET Endday='$target_day' WHERE itemID='$itemID'";
       if ($conn->query($sql) === TRUE) {
-        header("Location:main.php");
+        header("Refresh:0; Location:main.php");
       } else {
         echo "1 Error during updating record: " . $conn->error . "<br>";
         } 
@@ -119,14 +119,14 @@ if ($Picture == NULL) {
         <tbody>
         <?php
 
-        $sql = "SELECT userID FROM userinfo WHERE Emailaddress='$Emailaddress'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-            $user = $row["userID"];
-            $userID = $user;
-            $_SESSION["userID"] = $userID; 
-           }}
+        // $sql = "SELECT userID FROM userinfo WHERE Emailaddress='$Emailaddress'";
+        // $result = $conn->query($sql);
+        // if ($result->num_rows > 0) {
+        //   while ($row = $result->fetch_assoc()) {
+        //     $user = $row["userID"];
+        //     $userID = $user;
+        //     $_SESSION["userID"] = $userID; 
+        //    }}
         $sql1 = "SELECT * FROM itemdata WHERE userID='$userID'";
         $result2 = $conn->query($sql1);
         if ($result2->num_rows > 0) {

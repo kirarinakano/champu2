@@ -12,9 +12,9 @@ $result = $conn->query($sql);
     }
   }
 if(isset($_POST['submit'])) {
-  $birthday = $_POST['Birthday'];
-  $emailaddress = $_POST['Emailaddress'];
-  $sql = "SELECT * from userinfo WHERE Birthday='$Birthday', Emailaddress=$Email";
+  $birthday = $_POST['birthday'];
+  $emailaddress = $_POST['emailaddress'];
+  $sql = "SELECT * from userinfo WHERE Birthday='$Birthday' and Emailaddress=$Email";
   $result = $conn->query($sql);
     if ($result->num_rows > 0){
       header("location:changepassword.php");
@@ -23,7 +23,6 @@ if(isset($_POST['submit'])) {
     }
 }
 ?>
-
 <!DOCTYPE html1>
 <html>
  <head>
@@ -53,7 +52,7 @@ if(isset($_POST['submit'])) {
               </tr>  
               <tr>
                 <td class="sub">Email address</td>  
-                <td align="center"><input class="box" type="email" required></td>
+                <td align="center"><input class="box" type="email" name ="emailaddress" required></td>
               </tr>
               <tr>
                 <td></td>
