@@ -95,7 +95,7 @@ if (isset($_POST["submit"])){
       <br>
       <a href='register.php' class="link">Sign up</a><br><br>
     
-      <a href='forgot.php' class="link">Forgot password ?</a>   
+      <a href='forgotpassword.php' class="link">Forgot password ?</a>   
         </form>
       </div>
 </body>
