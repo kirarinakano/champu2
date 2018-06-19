@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 if(isset($_POST['submit'])) {
   $birthday = $_POST['birthday'];
   $emailaddress = $_POST['emailaddress'];
-  $sql = "SELECT * from userinfo WHERE Birthday='$Birthday' and Emailaddress=$Email";
+  $sql = "SELECT * from userinfo WHERE Birthday='$birthday' and Emailaddress='$emailaddress'";
   $result = $conn->query($sql);
     if ($result->num_rows > 0){
       header("location:changepassword.php");
