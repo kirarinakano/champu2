@@ -130,7 +130,7 @@ if ($Picture == NULL) {
       </div>
       <br>
       <?php  
-      $sql5 = "SELECT * FROM itemdata";
+      $sql5 = "SELECT * FROM itemdata WHERE userID='$userID'";
       $result2 = $conn->query($sql5);
           
       if ($result2->num_rows == 0) {

@@ -217,7 +217,7 @@ if ($Picture == NULL) {
               echo "<td>";
               
                 //if user have more than two record, display days left.
-                if ($count >= 2) {
+                if ($count >= 2 and $row['Average'] >=1) {
                 $useday = $amount / $row["Average"];
                 $usedays = round($useday,0);
                 $nextbuy = date("Y-m-d ",strtotime($Startday . "+$usedays days"));
