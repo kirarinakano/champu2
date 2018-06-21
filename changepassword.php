@@ -1,15 +1,22 @@
 <?php
-
+session_start();
+include 'connect.php';
 $errormessage = ""; //initialize error message
 $errormessage1 = ""; //initialize error message
-
+$userID = $_SESSION['userID'];
 if (isset($_POST["submit"])) {
     $password = $_POST["password"]; // get data of password
     $retypepassword = $_POST["retypepassword"]; // get data of passwordagain
 
-    if ($password!= $retypepassword) { // if password and password again is not the same.
+    if ($password != $retypepassword) { // if password and password again is not the same.
         $errormessage1 = "New Password and re-enter password are different. Please input same characters in both password form."; // error message
     } else {
+        $sql = "UPDATE userinfo SET Password='$password' WHERE userID='$userID'";
+        if ($conn->query($sql) === TRUE) {
+        echo "";
+        } else {
+         echo "1 Error during updating record: " . $conn->error . "<br>";
+        }
         header("Location:login.php");
     }
 }

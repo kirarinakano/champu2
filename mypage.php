@@ -139,7 +139,7 @@ if ($Picture == NULL) {
 	    <input type="submit" value="Update" name="upload" class="upload"><br><br>
 
 	    <input class="button" type="submit" formaction="changeemailaddress.php" value="Change email address" >&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;
-	    <input class="button" type="submit" formaction="changepassword.php" value="Change password" >
+	    <input class="button" type="submit" formaction="mypage_changepassword.php" value="Change password" >
 	    <br><br><br>
 	    <p class="text"><strong>Connect a Social Network</strong></p>
 

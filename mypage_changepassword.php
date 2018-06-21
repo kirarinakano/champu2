@@ -1,14 +1,37 @@
 <?php
+session_start();
+include 'connect.php';
 
 $errormessage = ""; //initialize error message
 $errormessage1 = ""; //initialize error message
+$errormessage2 = "";
+
+
+$userID = $_SESSION['userID'];
+
+$sql="SELECT * from userinfo WHERE userID='$userID'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $password = $row['Password'];
+}
 
 if (isset($_POST["submit"])) {
-    $password = $_POST["password"]; // get data of password
+    $currentpassword = $_POST["currentpassword"]; //get data of current password
+    $newpassword = $_POST["password"]; // get data of password
     $retypepassword = $_POST["retypepassword"]; // get data of passwordagain
 
-    if ($password!= $retypepassword) { // if password and password again is not the same.
-        $errormessage1 = "New Password and re-enter password are different. Please input same characters in both password form."; // error message
+    if ($newpassword!= $retypepassword) { // if password and password again is not the same.
+    $errormessage1 = "New Password and re-enter password are different. Please input same characters in both password form."; // error message
+    } else if ($password!= $currentpassword) {
+    $errormessage2 = "Your password is wrong. Please input correct password.";     
+    } else {
+    $sql = "UPDATE userinfo SET Password='$newpassword' WHERE userID='$userID'";
+     if ($conn->query($sql) === TRUE) {
+        header("Location: mypage.php");
+     } else {
+     echo "1 Error during updating record: " . $conn->error . "<br>";
+       }
     }
 }
 
@@ -34,6 +57,11 @@ if (isset($_POST["submit"])) {
                     <td class="sub">Current Password</td> 
                     <td align="center">
                         <input class="box" type="password" minlength="6" maxlength="12" autocomplete="off" name="currentpassword" size="30" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="errormsg"> <?php echo $errormessage2; ?> </p>
                     </td>
                 </tr>
                 <tr>

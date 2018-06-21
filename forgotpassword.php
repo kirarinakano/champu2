@@ -17,6 +17,8 @@ if(isset($_POST['submit'])) {
   $sql = "SELECT * from userinfo WHERE Birthday='$birthday' and Emailaddress='$emailaddress'";
   $result = $conn->query($sql);
     if ($result->num_rows > 0){
+      $row = $result->fetch_assoc();
+      $_SESSION['userID'] = $row['userID'];
       header("location:changepassword.php");
     } elseif ($result->num_rows == 0) {
       $errormessage = "＊Your birthday or/and email address is wrong.";
