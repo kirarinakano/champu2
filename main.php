@@ -5,6 +5,9 @@ $userID = $_SESSION["userID"];
 
 $sql = "SELECT * FROM itemdata LEFT JOIN itemadddata ON itemdata.itemID = itemadddata.itemID";
 $result = $conn->query($sql);
+if ($result->num_rows == 0) {
+  header("Location:add.php");
+}
 
 $errorMessage = "";
 $answer = "";

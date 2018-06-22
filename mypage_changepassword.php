@@ -28,7 +28,10 @@ if (isset($_POST["submit"])) {
     } else {
     $sql = "UPDATE userinfo SET Password='$newpassword' WHERE userID='$userID'";
      if ($conn->query($sql) === TRUE) {
-        header("Location: mypage.php");
+        echo '<script type="text/javascript">
+            window.alert(\'Your password has changed successfully\');
+            window.location = "main.php";
+         </script>';
      } else {
      echo "1 Error during updating record: " . $conn->error . "<br>";
        }

@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
     if ($conn->query($sql) === TRUE) {
         echo '<script type="text/javascript">
             window.alert(\'Your new email addrss was recorded successfully\');
-
+            window.location = "main.php";
          </script>';
     } else {
         echo "Error:" .$sql."<br>".$conn->error;
